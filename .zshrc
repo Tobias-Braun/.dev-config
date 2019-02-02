@@ -85,15 +85,14 @@ POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir vcs)
 plugins=(
   git,
   gradle,
-  zsh-auto-suggestions,
-  zsh-syntax-highlighting,
+  npm,
   colored-man-pages,
-  colorls,
-  npm
+  zsh-auto-suggestions,
+  zsh-syntax-highlighting
 )
 
-source $ZSH/oh-my-zsh.sh
 source ~/.oh-my-zsh/plugins/git/git.plugin.zsh
+source $ZSH/oh-my-zsh.sh
 # User configuration
 
 export MANPATH="/usr/local/man:$MANPATH"
