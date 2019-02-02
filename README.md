@@ -15,4 +15,4 @@ enjoy a synced shell configuration.
 
 
 # How it looks
-![My image](Tobias-Braun.github.com/.dev-config/example.png)
+![](example.png)
