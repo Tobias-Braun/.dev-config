@@ -3,3 +3,8 @@
 
 
 # IN GIT BASH / LINUX SUBSYSTEM:
+sudo apt install ruby-full
+sudo apt install build-essential
+sudo gem install colorls
+sudo apt install git-flow
+maybe you need to add "source ~/.oh-my-zsh/plugins/<plugin-name>/<source-script-name>.zsh" to your .zshrc for plugins that don't get sourced automatically.

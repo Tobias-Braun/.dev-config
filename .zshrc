@@ -3,7 +3,7 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/tobi/.oh-my-zsh"
-
+export WIN_HOME="/mnt/c/Users/"
 # Colored man pages using less
 
 man() {
@@ -17,6 +17,11 @@ man() {
 	      LESS_TERMCAP_us=$(printf "\e[1;36m") \
 	      man "$@"
 }
+
+
+bindkey '^`' autosuggest-clear
+
+LS_COLORS='di=1:fi=0:ln=31:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=36:*.rpm=90'
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -25,7 +30,7 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 POWERLEVEL9K_MODE="nerdfont-complete"
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{014}\u2570%F{cyan}\uF460%F{073}\uF460%F{109}\uF460%f "
-
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir vcs)
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
 # If set to an empty array, this variable will have no effect.
@@ -81,13 +86,17 @@ plugins=(
   git,
   gradle,
   zsh-auto-suggestions,
-  zsh-syntax-highlighting
+  zsh-syntax-highlighting,
+  colored-man-pages,
+  colorls,
+  npm
 )
 
 source $ZSH/oh-my-zsh.sh
+source ~/.oh-my-zsh/plugins/git/git.plugin.zsh
 # User configuration
 
-# export MANPATH="/usr/local/man:$MANPATH"
+export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -113,3 +122,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias opt-dev="cd /mnt/c/Users/Tobi*/Optimum"
+alias fse-dev="cd /mnt/c/Users/Tobi*/fse"
+alias ll='colorls -lA --group-directories-first'
+alias ls='colorls --group-directories-first'
