@@ -3,8 +3,27 @@
 
 
 # IN GIT BASH / LINUX SUBSYSTEM:
+# Clone with submodules to get .oh-my-zsh repo downloaded as well
+git clone <this-repo> --recurse-submodules
+# You might need to fix permissions on the .oh-my-zsh folder
+chmod 700 .dev-config/.oh-my.zsh
+# Create the sumbolic links to the configuration files
+ln -s .dev-config/.oh-my-zsh .oh-my-zsh
+ln -s .dev-config/.zshrc .zshrc
+ln -s .dev-config/.bashrc .bashrc
+ln -s .dev-config/.zsh .zsh
+# Install colorls
 sudo apt install ruby-full
 sudo apt install build-essential
 sudo gem install colorls
+# (Optional) install git-flow
 sudo apt install git-flow
+# Install .oh-my-zsh plugins
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+# Change file permissions on those folders as well
+chmod 700 ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+chmod 700 ~/.oh-my-zsh/custom/plugins/zsh-auto-suggestions
+# Do this to sources themes individualy if .oh-my-zsh doesn't detect them. Always remember to source -zsh-syntax-highlighting last
 maybe you need to add "source ~/.oh-my-zsh/plugins/<plugin-name>/<source-script-name>.zsh" to your .zshrc for plugins that don't get sourced automatically.
+
