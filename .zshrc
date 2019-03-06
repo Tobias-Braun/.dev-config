@@ -19,6 +19,11 @@ man() {
 }
 
 
+# Explicitly loading compdef
+autoload -Uz compinit
+compinit
+
+
 LS_COLORS='di=1:fi=0:ln=31:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=36:*.rpm=90'
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -81,7 +86,6 @@ POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir vcs)
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git,
   gradle,
   npm,
   colored-man-pages,
@@ -128,10 +132,10 @@ alias docker-compose=docker-compose.exe
 alias grep='grep --color=auto'
 alias ll='ls -la'
 alias ls=' ls --color=auto'
-
+bindkey '^H' backward-kill-word
 # The following lines were added by compinstall
 
-zstyle ':completion:*' format 'completing %d'
+zstyle ':completion:*' format '[ completing %d ]'
 zstyle ':completion:*' group-name ''
 zstyle :compinstall filename '/home/tobi/.zshrc'
 
