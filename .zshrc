@@ -121,9 +121,28 @@ export MANPATH="/usr/local/man:$MANPATH"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias opt-dev="cd /mnt/c/Users/Tobi*/Optimum"
 alias fse-dev="cd /mnt/c/Users/Tobi*/fse"
-alias ll='colorls -lA --group-directories-first'
-alias ls='colorls --group-directories-first'
 export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 export PATH="$PATH:/mnt/c/Program\ Files/Docker/Docker/resources/bin"
 alias docker=docker.exe
 alias docker-compose=docker-compose.exe
+alias grep='grep --color=auto'
+alias ll='ls -la'
+alias ls=' ls --color=auto'
+
+# The following lines were added by compinstall
+
+zstyle ':completion:*' format 'completing %d'
+zstyle ':completion:*' group-name ''
+zstyle :compinstall filename '/home/tobi/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+
+
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=2500
+SAVEHIST=2500
+bindkey -e
+# End of lines configured by zsh-newuser-install
