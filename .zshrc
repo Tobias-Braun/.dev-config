@@ -143,10 +143,23 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
-
-# Lines configured by zsh-newuser-install
+# lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
-HISTSIZE=2500
-SAVEHIST=2500
+HISTSIZE=10000
+SAVEHIST=9999999
 bindkey -e
 # End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+
+zstyle ':completion:*' completer _complete _ignored _approximate
+zstyle ':completion:*' format '< ... %d >'
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*' list-colors ''
+zstyle ':completion:*' list-prompt '%SAt %p: Hit TAB for more, or the 
+character to insert%s'
+zstyle ':completion:*' menu select=long
+zstyle ':completion:*' original true
+zstyle ':completion:*' select-prompt '%SScrolling active: current 
+selection at %p%s'
+zstyle ':completion:*' verbose true
+zstyle :compinstall filename '/home/tobi/.zshrc'
