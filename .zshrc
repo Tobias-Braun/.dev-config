@@ -24,7 +24,8 @@ autoload -Uz compinit
 compinit
 
 
-LS_COLORS='di=1:fi=0:ln=31:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=36:*.rpm=90'
+export LS_COLORS=di=34:ln=36:so=32:pi=35:ex=31:*.rpm=90
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -132,6 +133,7 @@ alias docker-compose=docker-compose.exe
 alias grep='grep --color=auto'
 alias ll='ls -la'
 alias ls=' ls --color=auto'
+alias y=yaourt
 bindkey '^H' backward-kill-word
 # The following lines were added by compinstall
 
@@ -150,3 +152,8 @@ HISTSIZE=2500
 SAVEHIST=2500
 bindkey -e
 # End of lines configured by zsh-newuser-install
+
+# NVM script for sourcing (.nvm)
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
