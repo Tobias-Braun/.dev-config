@@ -78,7 +78,7 @@ POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir vcs)
 # see 'man strftime' for details.
 # HIST_STAMPS="mm/dd/yyyy"
 
-X# Would you like to use another custom folder than $ZSH/custom?
+# Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
 # Which plugins would you like to load?
@@ -126,10 +126,6 @@ export MANPATH="/usr/local/man:$MANPATH"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias opt-dev="cd /mnt/c/Users/Tobi*/Optimum"
 alias fse-dev="cd /mnt/c/Users/Tobi*/fse"
-export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
-export PATH="$PATH:/mnt/c/Program\ Files/Docker/Docker/resources/bin"
-alias docker=docker.exe
-alias docker-compose=docker-compose.exe
 alias grep='grep --color=auto'
 alias ll='ls -la'
 alias ls=' ls --color=auto'
@@ -165,6 +161,7 @@ zstyle ':completion:*' select-prompt '%SScrolling active: current
 selection at %p%s'
 zstyle ':completion:*' verbose true
 zstyle :compinstall filename '/home/tobi/.zshrc'
+
 # NVM script for sourcing (.nvm)
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
