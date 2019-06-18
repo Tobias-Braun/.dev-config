@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/tobi/.oh-my-zsh"
+export ZSH="/Users/tobiasbraun/.oh-my-zsh"
 export WIN_HOME="/mnt/c/Users/"
 # Colored man pages using less
 
@@ -116,6 +116,13 @@ export MANPATH="/usr/local/man:$MANPATH"
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
+
+# NVM
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -128,14 +135,15 @@ alias opt-dev="cd /mnt/c/Users/Tobi*/Optimum"
 alias fse-dev="cd /mnt/c/Users/Tobi*/fse"
 alias grep='grep --color=auto'
 alias ll='ls -la'
-alias ls=' ls --color=auto'
-alias y=yaourt
+alias lc='ls --color=auto'
+alias y='yaourt'
+alias py='python3'
 bindkey '^H' backward-kill-word
 # The following lines were added by compinstall
 
 zstyle ':completion:*' format '[ completing %d ]'
 zstyle ':completion:*' group-name ''
-zstyle :compinstall filename '/home/tobi/.zshrc'
+zstyle :compinstall filename '/Users/tobiasbraun/.zshrc'
 
 autoload -Uz compinit
 compinit
@@ -160,9 +168,10 @@ zstyle ':completion:*' original true
 zstyle ':completion:*' select-prompt '%SScrolling active: current 
 selection at %p%s'
 zstyle ':completion:*' verbose true
-zstyle :compinstall filename '/home/tobi/.zshrc'
+zstyle :compinstall filename '/Users/tobiasbraun/.zshrc'
 
-# NVM script for sourcing (.nvm)
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/tobiasbraun/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/tobiasbraun/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/tobiasbraun/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/tobiasbraun/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
