@@ -6,18 +6,6 @@ export ZSH="/Users/tobiasbraun/.oh-my-zsh"
 export WIN_HOME="/mnt/c/Users/"
 # Colored man pages using less
 
-man() {
-    env \
-	      LESS_TERMCAP_mb=$(printf "\e[1;31m") \
-	      LESS_TERMCAP_md=$(printf "\e[1;31m") \
-	      LESS_TERMCAP_me=$(printf "\e[0m") \
-	      LESS_TERMCAP_se=$(printf "\e[0m") \
-	      LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
-	      LESS_TERMCAP_ue=$(printf "\e[0m") \
-	      LESS_TERMCAP_us=$(printf "\e[1;36m") \
-	      man "$@"
-}
-
 
 # Explicitly loading compdef
 autoload -Uz compinit
@@ -30,11 +18,8 @@ export LS_COLORS=di=34:ln=36:so=32:pi=35:ex=31:*.rpm=90
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="powerlevel9k/powerlevel9k"
-POWERLEVEL9K_MODE="nerdfont-complete"
-POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{014}\u2570%F{cyan}\uF460%F{073}\uF460%F{109}\uF460%f "
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir vcs)
+ZSH_THEME="agnoster"
+
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
 # If set to an empty array, this variable will have no effect.
@@ -87,13 +72,10 @@ POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir vcs)
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  gradle,
-  npm,
-  colored-man-pages,
-  zsh-auto-suggestions,
+  zsh-autosuggestions
   zsh-syntax-highlighting
+  pip
 )
-
 source ~/.oh-my-zsh/plugins/git/git.plugin.zsh
 source $ZSH/oh-my-zsh.sh
 # User configuration
@@ -104,17 +86,17 @@ export MANPATH="/usr/local/man:$MANPATH"
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+	export EDITOR='code'
+else
+	export EDITOR='code'
+fi
 
 # Compilation flags
-# export ARCHFLAGS="-arch x86_64"
+export ARCHFLAGS="-arch x86_64"
 
 # ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
+export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 
 # NVM
@@ -138,6 +120,7 @@ alias ll='ls -la'
 alias lc='ls --color=auto'
 alias y='yaourt'
 alias py='python3'
+alias gnu-gcc='/usr/local/Cellar/gcc/9.2.0_1/bin/gcc-9'
 bindkey '^H' backward-kill-word
 # The following lines were added by compinstall
 
@@ -175,3 +158,5 @@ if [ -f '/Users/tobiasbraun/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/tobiasbraun/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/tobiasbraun/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+export ARTIFACTORY_AUTH_TOKEN=dDI0MDk4QGVvbi5jb206QUtDcDVlM1ZDc25mVTlBMUc4OWtGSHpudnN1U2h3TkE2ZUJtS1hnNllUYjlwQ1pFMzIyRkJTRUx0RUtFbTJXcXNSTDh0VzdTdg==
